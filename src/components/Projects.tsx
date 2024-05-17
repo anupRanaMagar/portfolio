@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const Project = ({
   title,
   description,
@@ -12,7 +14,7 @@ const Project = ({
       <div className="">
         <h1>{title}</h1>
         <p>{description}</p>
-        <img src={imgSrc} alt="project thumnail" />
+        <Image src={imgSrc} alt="project thumnail" />
       </div>
     </>
   );

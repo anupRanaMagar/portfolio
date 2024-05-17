@@ -20,7 +20,7 @@ const Navbar = () => {
                 <div className="font-medium pr-6 md:pr-8 lg:pr-10">Project</div>
               </div>
               <Button variant={"default"} className="">
-                Let's Contact
+                Let&apos;s Contact
               </Button>
             </div>
           </div>
