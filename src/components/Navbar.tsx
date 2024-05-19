@@ -15,9 +15,18 @@ const Navbar = () => {
 
             <div className="h-full flex items-center space-x-4">
               <div className="flex space-x-4 lg:space-x-8">
-                <div className="font-medium">Home</div>
-                <div className="font-medium">Skills</div>
-                <div className="font-medium pr-6 md:pr-8 lg:pr-10">Project</div>
+                <Link href="#Home" className="font-medium">
+                  Home
+                </Link>
+                <Link href="#aboutMe" className="font-medium">
+                  About Me
+                </Link>
+                <Link
+                  href="#project"
+                  className="font-medium pr-6 md:pr-8 lg:pr-10"
+                >
+                  Project
+                </Link>
               </div>
               <Button variant={"default"} className="">
                 Let&apos;s Contact

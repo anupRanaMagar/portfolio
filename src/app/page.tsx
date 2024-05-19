@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Linkedin } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
 import {
   TailwindcssOriginal,
@@ -20,6 +20,7 @@ import Project from "@/components/Projects";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 
 import Image from "next/image";
+import ProjectCart from "@/components/ProjectCart";
 
 const words = [
   {
@@ -36,7 +37,7 @@ const words = [
 export default function Home() {
   return (
     <div>
-      <Container className="py-16  flex justify-center">
+      <Container id="home" className="py-16  flex justify-center">
         <div className=" flex flex-col-reverse md:flex-row justify-center items-center gap-6">
           <div className=" lg:w-1/2 flex flex-col items-center justify-center md:items-start md:justify-start ">
             <TypewriterEffect
@@ -63,7 +64,14 @@ export default function Home() {
             </Button>
           </div>
           <div className="w-full lg:w-1/2 flex justify-center">
-            <div className="hero_img h-56 w-52 md:h-64 md:w-56 lg:h-80 lg:w-72"></div>
+            <div className=" h-56 w-52 md:h-64 md:w-56 lg:h-80 lg:w-72 relative">
+              <Image
+                className="hero_img absolute"
+                src={`/profile.jpeg`}
+                fill
+                alt="profile"
+              ></Image>
+            </div>
           </div>
         </div>
       </Container>
@@ -88,7 +96,10 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      <Container className="flex flex-col justify-center items-center py-24 gap-10">
+      <Container
+        id="aboutMe"
+        className="flex flex-col justify-center items-center py-24 gap-10"
+      >
         <h1 className="font-semibold text-3xl">About Me</h1>
         <h2 className="text-2xl">
           Full Stack Developer based in Kathmandu, Nepal
@@ -100,18 +111,59 @@ export default function Home() {
           and TypeScript.
         </p>
       </Container>
-      <Container className="flex flex-col justify-center items-center">
+      <Container
+        id="project"
+        className="flex flex-col justify-center items-center gap-4 mb-8 mt-6"
+      >
         <h1 className="font-semibold text-3xl">Projects</h1>
 
         <div
-          className="flex gap-4 flex-wrap 
+          className="flex gap-4 lg:gap-8 flex-wrap 
        justify-center
         "
-        ></div>
+        >
+          <ProjectCart
+            title="Image Colorizer"
+            description="Using the latest Machine Learning technology to restore old photos automatically and instantly"
+            thumnail="/image_colorizer.jpeg"
+            githubUrl="https://anupranamagar.github.io/portfolio/"
+          />
+          <ProjectCart
+            title="Real Time Chatting App"
+            description="High Using redis and socket.io "
+            thumnail="/chatting.png"
+            githubUrl="https://chatting-app-opal-nine.vercel.app/"
+          />
+          <ProjectCart
+            title="Image Colorizer"
+            description="Using the latest Machine Learning technology to restore old photos automatically and instantly"
+            thumnail="/image_colorizer.jpeg"
+            githubUrl="https://github.com/anupRanaMagar"
+          />
+        </div>
+      </Container>
+      <Container>
+        <footer className="w-full pt-20 pb-10 " id="contact">
+          <div className="flex flex-col items-center">
+            <h1 className="text-2xl font-semibold lg:max-w-[45vw]">
+              Ready to take <span className="text-green-400">your</span> digital
+              presence to the next level?
+            </h1>
+            <p className="text-white-200 md:mt-10 my-5 text-center">
+              Reach out to me today and let&apos;s discuss how I can help you
+              achieve your goals.{" "}
+            </p>
+            <Link href="mailto:anupranamagar20@gmail.com">
+              <Button>
+                Let&apos;s get in touch <Mail className="h-4 w-4 ml-1" />
+              </Button>
+            </Link>
+          </div>
+        </footer>
       </Container>
       <div className="bg-zinc-300 h-full mx-auto w-full  px-6 md:px-20">
         <div className="h-20 flex flex-col md:flex-row justify-center items-center gap-4 lg:gap-10">
-          <p>&copy; 2024, All Rights Reserver, Inc </p>
+          <p>Copyright &copy; 2024, All Rights Reserver, Inc </p>
           <div className="flex gap-4">
             <Link href={"https://github.com/anupRanaMagar"}>
               <Github />
